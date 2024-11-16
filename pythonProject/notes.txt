@@ -1,0 +1,30 @@
+File purposes:
+    1. app.py is used for main app functions, entry point of app
+    2. config.py is used to store variables like API keys, database URLs, debug settings
+    3. data_proc.py is used for data processing
+    4. db_models.py is used for database models
+    5. spotify_api.py is used for spotify api integration
+    6. test_app is used for test cases
+    7. utils.py is used for helper function
+
+Example project structure:
+
+spotify-analyzer/
+│
+├── app.py               # Main application file
+├── spotify_api.py       # Spotify API integration
+├── data_processing.py   # Data processing and analysis
+├── models.py            # Database models (if using a database)
+├── utils.py             # Helper functions
+├── config.py            # Configuration and secrets
+├── test_app.py          # Test cases
+│
+├── templates/           # HTML templates (for Flask/Django)
+│   ├── index.html
+│   └── dashboard.html
+│
+├── static/              # Static assets
+│   ├── css/
+│   └── js/
+│
+└── requirements.txt     # Python dependencies
