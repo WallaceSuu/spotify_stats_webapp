@@ -17,7 +17,6 @@ sp_oauth = SpotifyOAuth(
 #creating a spotify client
 spotifyClient = Spotify(auth_manager = sp_oauth)
 
-
 def fetch_user_info():
     user_info = spotifyClient.me()
     print("Logged in as:", user_info["display_name"])
@@ -28,5 +27,5 @@ def fetch_user_info():
 
 #main function
 if __name__ == "__main__":
-    profile = fetch_user_info()
-    print(profile)
+    PROFILE = fetch_user_info()
+    print(PROFILE)
