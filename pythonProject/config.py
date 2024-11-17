@@ -1,17 +1,17 @@
 from dotenv import load_dotenv
 import os
 
-
 #using the os to access spotify API credentials (to be safe from it getting comprimized)
-#using $env: syntax
-#setting the variables through powershell:
 
-# $env:SPOTIPY_CLIENT_ID = "your-spotify-client-id"
-# $env:SPOTIPY_CLIENT_SECRET = "your-spotify-client-secret"
-# $env:SPOTIPY_REDIRECT_URI = "your-app-redirect-url"
+# Load the .env file
+load_dotenv(dotenv_path="spotify_api_keys.env")
 
-#set for current powershell session only
+SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+SPOTIPY_CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
+SPOTIPY_REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
 
-load_dotenv()
 
-print("SPOTIPY_CLIENT_ID:", os.getenv("SPOTIPY_CLIENT_ID")) #if it prints properly, it is working
+# Test if environment variables are loaded
+# print("SPOTIPY_CLIENT_ID:", SPOTIPY_CLIENT_ID)
+# print("SPOTIPY_CLIENT_SECRET:", SPOTIPY_CLIENT_SECRET)
+# print("SPOTIPY_REDIRECT_URI:", SPOTIPY_REDIRECT_URI)
