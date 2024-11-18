@@ -12,7 +12,7 @@ CORS(app) #enable Cross Origin Resource Sharing (CORS) for React frontend
 def get_data():
     try:
         data = fetch_user_info() #returns a dictionary
-        recently_played = fetch_recently_played(10) #fetches 10 most recently listened to tracks
+        recently_played = fetch_recently_played(20) #fetches 10 most recently listened to tracks
         response = {
             "user_info": data,
             "recently_played_tracks": recently_played

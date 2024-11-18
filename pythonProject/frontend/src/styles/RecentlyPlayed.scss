@@ -1,3 +1,44 @@
-li {
-  list-style: none;  
+.wrapper {
+    padding-top: 2.5%;
+    color: #ffffff;
+    background-color: #282c34;
+    height: 100%;
+}
+
+.headerText {
+    font-weight: bold;
+}
+
+.recentList {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+
+    li {
+        display: flex;           /* Makes the list item a flex container */
+        align-items: center;     /* Vertically centers the elements */
+        margin-top: 1%;
+        width: 100%;             /* Take full width */
+        gap: 15px;  
+    }
+
+    img {
+        padding-right: 10px;
+    }
+
+    .track_name {
+        flex-grow: 1;
+    }
+
+    .divider {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+
 }
