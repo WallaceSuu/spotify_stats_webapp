@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Header.scss";
 
 const Header = () => {
@@ -6,21 +7,21 @@ const Header = () => {
     <header className="header">
       <div className="logo">Spotiscope</div>
       <nav className="nav">
-        <a href="#top-tracks" className="nav-item">
+        <Link to="/TopTracks" className="nav-item">
           Top Tracks
-        </a>
-        <a href="#top-artists" className="nav-item">
+        </Link>
+        <Link to="#top-artists" className="nav-item">
           Top Artists
-        </a>
-        <a href="#top-genres" className="nav-item">
+        </Link>
+        <Link to="#top-genres" className="nav-item">
           Top Genres
-        </a>
-        <a href="#recently-played" className="nav-item">
+        </Link>
+        <Link to="#recently-played" className="nav-item">
           Recently Played
-        </a>
-        <a href="#share" className="nav-item">
+        </Link>
+        <Link to="#share" className="nav-item">
           Share
-        </a>
+        </Link>
       </nav>
     </header>
   );

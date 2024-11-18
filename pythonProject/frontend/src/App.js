@@ -1,10 +1,18 @@
+//library/package imports
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+//component imports
 import './App.css';
 import Dashboard from './components/Dashboard.js';
 import Header from './components/Header.js';
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import TopTracks from './pages/TopTracks.js';
+
 
 function App() {
+  //moving the data grabbing function to a parent function of the components
+  //this makes the code more modular and reusable
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -25,13 +33,25 @@ function App() {
   if (error) return <div>Error: {error}</div>;
   if (!data) return <div>Loading...</div>;
 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header></Header>
-        <Dashboard data = {data}></Dashboard>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {/*header should be outside the Switch*/}
+        <header className="App-header">
+          <Header />
+        </header>
+
+        {/*defining routes*/}
+        <Routes>
+          {/*default route for the dashboard */}\
+          <Route path="/" element={<Dashboard data={data} />} />
+          {/* Additional route for the TopTracks page */}
+          <Route path="/TopTracks" element={<TopTracks data={data} />} />
+          {/* Add more routes as needed */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
