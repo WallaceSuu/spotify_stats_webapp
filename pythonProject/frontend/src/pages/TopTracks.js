@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
-const TopTracks = () => {
+const TopTracks = ({data}) => {
+    const trackName = Array(10).fill("test");
+
     return (
-        <div>test text</div>
+        <div>
+            {trackName.map((text, index) => (
+                <p key={index}>{text}</p>
+            ))}
+        </div>
     )
 }
 

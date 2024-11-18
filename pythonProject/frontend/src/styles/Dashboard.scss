@@ -1,15 +1,19 @@
-.App-header {
-    position: relative;
-    padding: 20px;
-    z-index: 10;
-    top: 2.5%;
-  }
-    
-    #profile_img{
-        margin: 0px;
-        border: 0px;
-        width: 200px;
-        object-fit: cover; //this makes the image cropped instead of compressed when the width and height are set
-        height: 200px;
-        border-radius: 50%;
-    }
+#profile_img{
+    margin: 0px;
+    border: 0px;
+    width: 200px;
+    object-fit: cover; //this makes the image cropped instead of compressed when the width and height are set
+    height: 200px;
+    border-radius: 50%;
+}
+
+h1 {
+    margin: 0;
+}
+
+.dashboard {
+    padding-top: 10%;
+    color: #ffffff;
+    background-color: #282c34;
+    height: 100vh;
+}

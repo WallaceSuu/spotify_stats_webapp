@@ -25,6 +25,10 @@ def fetch_user_info():
     print("ID:", user_info["id"])
     return user_info
 
+def fetch_recently_played(limit):
+    recently_played = spotifyClient.current_user_recently_played(limit = limit)
+    return recently_played
+
 #main function
 if __name__ == "__main__":
     PROFILE = fetch_user_info()

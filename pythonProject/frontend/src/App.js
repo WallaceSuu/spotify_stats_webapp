@@ -4,10 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 //component imports
-import './App.css';
+import './App.scss';
 import Dashboard from './components/Dashboard.js';
 import Header from './components/Header.js';
 import TopTracks from './pages/TopTracks.js';
+import RecentlyPlayed from './pages/recently_played.js';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           {/* Additional route for the TopTracks page */}
           <Route path="/TopTracks" element={<TopTracks data={data} />} />
           {/* Add more routes as needed */}
+          <Route path = "/RecentlyPlayed" element={<RecentlyPlayed data={data} />} />
         </Routes>
       </div>
     </Router>
