@@ -16,31 +16,35 @@ html, body {
         font-weight: bold;
     }
     
-    .recentList {
+    .topArtists {
         list-style: none;
         text-align: left;
         display: inline-block;
         width: 40%;
     
         li {
-            display: flex;           /* Makes the list item a flex container */
-            align-items: center;     /* Vertically centers the elements */
+            display: flex; /* Makes the list item a flex container */
+            align-items: center; /* Vertically centers the elements */
             margin-top: 1%;
-            width: 100%;             /* Take full width */
-            gap: 15px;
+            width: 100%; /* Ensures the list item takes the full width */
+            gap: 15px; /* Adds spacing between the image and text */
         }
     
         img {
+            width: 170px;
+            height: 160px;
+            object-fit: cover;
             margin-top: 10px;
             padding-right: 10px;
+
         }
-    
-        .track_name {
-            flex-grow: 1;
+
+        .artist_name {
+            margin-left: auto; /* Pushes the artist name to the far right */
         }
     
         span {
-            display: inline-block;
+            margin-left: auto;
         }
     
     

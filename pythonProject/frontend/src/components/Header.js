@@ -10,16 +10,16 @@ const Header = () => {
         <Link to="/TopTracks" className="nav-item">
           Top Tracks
         </Link>
-        <Link to="#top-artists" className="nav-item">
+        <Link to="/TopArtists" className="nav-item">
           Top Artists
         </Link>
-        <Link to="#top-genres" className="nav-item">
+        <Link to="/TopGenres" className="nav-item">
           Top Genres
         </Link>
         <Link to="/RecentlyPlayed" className="nav-item">
           Recently Played
         </Link>
-        <Link to="#share" className="nav-item">
+        <Link to="/Share" className="nav-item">
           Share
         </Link>
       </nav>

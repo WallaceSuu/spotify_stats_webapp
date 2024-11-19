@@ -9,6 +9,9 @@ import Dashboard from './components/Dashboard.js';
 import Header from './components/Header.js';
 import TopTracks from './pages/TopTracks.js';
 import RecentlyPlayed from './pages/recently_played.js';
+import TopArtists from './pages/top_artists.js';
+import TopGenres from './pages/top_genres.js';
+import Share from './pages/Share.js';
 
 
 function App() {
@@ -47,10 +50,11 @@ function App() {
         <Routes>
           {/*default route for the dashboard */}\
           <Route path="/" element={<Dashboard data={data} />} />
-          {/* Additional route for the TopTracks page */}
           <Route path="/TopTracks" element={<TopTracks data={data} />} />
-          {/* Add more routes as needed */}
           <Route path = "/RecentlyPlayed" element={<RecentlyPlayed data={data} />} />
+          <Route path = "/TopGenres" element={<TopGenres data={data} />} />
+          <Route path = "/TopArtists" element={<TopArtists data={data} />} />
+          <Route path = "/Share" element={<Share data={data} />} />
         </Routes>
       </div>
     </Router>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../styles/TopGenres.scss"
+import "../styles/Share.scss"
 
-const TopGenres = () => {
+const Share = () => {
     return (
         <div className = "wrapper">
             placeholder
@@ -9,4 +9,4 @@ const TopGenres = () => {
     )
 }
 
-export default TopGenres;
+export default Share;
