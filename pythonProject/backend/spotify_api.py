@@ -1,9 +1,8 @@
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI
-from datetime import datetime, timedelta
-import re
-import time
+import json
+from collections import Counter
 
 #scope determines what permissions are going to be asked of users (read their private playlists, etc)
 #all scopes: https://developer.spotify.com/documentation/web-api/concepts/scopes
@@ -36,6 +35,15 @@ def fetch_top_artists(time_range):
 def fetch_top_tracks(time_range):
     results = spotifyClient.current_user_top_tracks(time_range=time_range)
     return results
+
+def fetch_top_genres(artists):
+    genres = []
+    for artist in artists['items']:
+        genres.extend(artist.get('genres', []))  # Collect genres for each artist
+    genre_counts = Counter(genres)  # Count occurrences of each genre
+    sorted_genre_counts = genre_counts.most_common()
+    return sorted_genre_counts
+
 
 #main function
 if __name__ == "__main__":

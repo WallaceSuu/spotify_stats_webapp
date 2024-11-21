@@ -21,11 +21,13 @@ const TopArtists = ({data}) => {
                 {items.length} Top Artists
             </div>
 
-            <button onClick={fourWeek}>Four Weeks</button>
-            <button onClick={fourMonth}>Four Months</button>
-            <button onClick={allTime}>All time</button>
+            <div className="buttonContainer">
+                <button onClick={fourWeek}>Four Weeks</button>
+                <button onClick={fourMonth}>Four Months</button>
+                <button onClick={allTime}>All time</button>
+            </div>
 
-             <ul className = "topArtists">
+            <ul className = "topArtists">
                 {items.map((item, index) => (
                     <li key = {index}>
                         <a href={item.external_urls.spotify}>

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from spotify_api import fetch_user_info, fetch_recently_played, fetch_top_artists, fetch_top_tracks
+from spotify_api import fetch_user_info, fetch_recently_played, fetch_top_artists, fetch_top_tracks, fetch_top_genres
 
 #this code starts the backend server at address http://127.0.0.1:5000
 #Flask endpoint as JSON (w/ data): http://localhost:5000/api/data
@@ -19,6 +19,11 @@ def get_data():
         top_tracks_short = fetch_top_tracks("short_term")
         top_tracks_medium = fetch_top_tracks("medium_term")
         top_tracks_long = fetch_top_tracks("long_term")
+        top_genres_short = fetch_top_genres(top_artists_short)
+        top_genres_medium = fetch_top_genres(top_artists_medium)
+        top_genres_long = fetch_top_genres(top_artists_long)
+
+
         response = {
             "user_info": data,
             "recently_played_tracks": recently_played,
@@ -27,7 +32,10 @@ def get_data():
             "top_artists_long": top_artists_long,
             "top_tracks_short": top_tracks_short,
             "top_tracks_medium": top_tracks_medium,
-            "top_tracks_long": top_tracks_long
+            "top_tracks_long": top_tracks_long,
+            "top_genres_short": top_genres_short,
+            "top_genres_medium": top_genres_medium,
+            "top_genres_long": top_genres_long
         }
         return jsonify(response) #ensure data is properly serialized
     except Exception as e:

@@ -18,9 +18,11 @@ const RecentlyPlayed = ({data}) => {
             <div className = "headerText">
                 {Math.min(visibleCount, items.length)} Recently Played Tracks
             </div>
-
-            <button onClick = {showMore} disabled = {visibleCount >= items.length}> Show 10 more</button>
-            <button onClick = {showAll} disabled = {visibleCount == items.length}> Show all</button>
+            
+            <div className="buttonContainer">
+                <button onClick = {showMore} disabled = {visibleCount >= items.length}> Show 10 more</button>
+                <button onClick = {showAll} disabled = {visibleCount == items.length}> Show all</button>
+            </div>
 
              <ul className = "recentList">
                 {items.slice(0, visibleCount).map((item, index) => (

@@ -20,9 +20,13 @@ const RecentlyPlayed = ({data}) => {
             <div className = "headerText">
                 {items.length} Top Tracks
             </div>
-            <button onClick={fourWeek}>Four Weeks</button>
-            <button onClick={fourMonth}>Four Months</button>
-            <button onClick={allTime}>All time</button>
+            
+            <div className="buttonContainer">
+                <button onClick={fourWeek}>Four Weeks</button>
+                <button onClick={fourMonth}>Four Months</button>
+                <button onClick={allTime}>All time</button>
+            </div>
+
              <ul className = "top_tracks">
                 {items.map((item, index) => (
                     <li key = {index}>

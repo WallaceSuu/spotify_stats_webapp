@@ -1,6 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #282c34; /* Ensures the background color is consistent */
+}
+
 .wrapper {
     padding-top: 2.5%;
     color: #ffffff;
     background-color: #282c34;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+
+    .headerText {
+        font-weight: bold;
+    }
+    
+    .topGenres {
+        list-style: none;
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+    
+        li {
+            display: flex;           /* Makes the list item a flex container */
+            align-items: center;     /* Vertically centers the elements */
+            margin-top: 1%;
+            width: 100%;             /* Take full width */
+            gap: 15px;
+        }
+    
+        span {
+            display: inline-block;
+        }
+    
+    
+    }
+
 }
+
+

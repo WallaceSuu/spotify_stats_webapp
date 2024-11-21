@@ -12,6 +12,28 @@ html, body {
     min-height: 100vh;
     height: 100%;
 
+    .buttonContainer {
+        display: flex;
+        gap: 10px; /* Adds space between buttons */
+        justify-content: center; /* Centers buttons horizontally */
+        margin-bottom: 20px;
+        margin-top: 20px;
+        width: 100%; /* Ensures buttons are centered relative to the parent */
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3c424e;
+            color: #ffffff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #21a1f1;
+            }
+        }
+    }
+
     .headerText {
         font-weight: bold;
     }
