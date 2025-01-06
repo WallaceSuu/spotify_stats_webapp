@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 //component imports
 import './App.scss';
+import './styles/Global.scss'
 import Dashboard from './components/Dashboard.js';
 import Header from './components/Header.js';
 import TopTracks from './pages/TopTracks.js';
@@ -12,6 +13,7 @@ import RecentlyPlayed from './pages/recently_played.js';
 import TopArtists from './pages/top_artists.js';
 import TopGenres from './pages/top_genres.js';
 import Share from './pages/Share.js';
+import Tracking from './pages/Tracking.js';
 
 
 function App() {
@@ -54,6 +56,7 @@ function App() {
           <Route path = "/RecentlyPlayed" element={<RecentlyPlayed data={data} />} />
           <Route path = "/TopGenres" element={<TopGenres data={data} />} />
           <Route path = "/TopArtists" element={<TopArtists data={data} />} />
+          <Route path = "/Tracking" element={<Tracking data={data} />} />
           <Route path = "/Share" element={<Share data={data} />} />
         </Routes>
       </div>

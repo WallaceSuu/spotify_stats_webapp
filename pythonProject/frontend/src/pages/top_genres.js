@@ -121,9 +121,11 @@ const TopGenres = ({data}) => {
                 <button onClick={fourMonth}>Four Months</button>
                 <button onClick={allTime}>All time</button>
             </div>
+
             <div className="canvasContainer">
                 <canvas className="graphCanvas" ref={chartRef}/>
             </div>
+            
         </div>
     )
 }

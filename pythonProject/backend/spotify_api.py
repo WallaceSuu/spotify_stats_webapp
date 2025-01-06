@@ -20,6 +20,8 @@ sp_oauth = SpotifyOAuth(
 #creating a spotify client
 spotifyClient = Spotify(auth_manager = sp_oauth)
 
+track_mapping = {}
+
 def fetch_user_info():
     user_info = spotifyClient.me()
     return user_info
@@ -44,10 +46,27 @@ def fetch_top_genres(artists):
     sorted_genre_counts = genre_counts.most_common()
     return sorted_genre_counts
 
+def add_recent_tracks(track_mapping):
+    recently_played = spotifyClient.current_user_recently_played(limit = 10)
+    for item in recently_played['items']:
+        track_id = recently_played['track']['id']
+        track_name = recently_played['track']['name']
+        played_at = item['played_at']
+
+        #creating a unique listening id for each track
+        unique_listening_id =  f"{track_id}_{played_at}"
+
+        if unique_listening_id not in track_mapping:
+            track_mapping[unique_listening_id] = {
+                "track_id": track_id,
+                "track_name": track_name,
+                "listened_at": played_at
+            }
+
+    print(track_mapping)
 
 #main function
 if __name__ == "__main__":
     PROFILE = fetch_user_info()
     print(PROFILE)
-    ok = fetch_top_artists("medium_term")
-    print(ok)
+    add_recent_track()

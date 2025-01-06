@@ -33,7 +33,7 @@ const TopArtists = ({data}) => {
                         <a href={item.external_urls.spotify}>
                             <img href={item.external_urls.spotify} src = {item.images[1].url}/>
                         </a>
-                        <span className = "artist_name"> {index+1}. {item.name} </span>
+                        <span className = "artist_name">{index+1}.{item.name}</span>
                     </li>
                 ))}
             </ul>

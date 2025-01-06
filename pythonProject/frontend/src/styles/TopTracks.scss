@@ -1,16 +1,10 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #282c34; /* Ensures the background color is consistent */
-}
-
 .wrapper {
     padding-top: 2.5%;
     color: #ffffff;
     background-color: #282c34;
     min-height: 100vh;
     height: 100%;
+    font-family: 'Roboto';
 
     .buttonContainer {
         display: flex;
@@ -59,13 +53,7 @@ html, body {
     
         .track_name {
             flex-grow: 1;
-        }
-    
-        span {
-            display: inline-block;
-        }
-    
-    
+        }   
     }
 
 }

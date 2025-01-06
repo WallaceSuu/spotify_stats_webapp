@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body, button {
+    font-family: 'Roboto', sans-serif; /* Set Roboto as the default font */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #ffff;
+}
+
+.wrapper span {
+    display: inline-block;
+    color: black;
+}

@@ -1,12 +1,32 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from spotify_api import fetch_user_info, fetch_recently_played, fetch_top_artists, fetch_top_tracks, fetch_top_genres
+import os
+import json
+from spotify_api import (fetch_user_info,
+                         fetch_recently_played,
+                         fetch_top_artists,
+                         fetch_top_tracks,
+                         fetch_top_genres,
+                         add_recent_tracks)
 
 #this code starts the backend server at address http://127.0.0.1:5000
 #Flask endpoint as JSON (w/ data): http://localhost:5000/api/data
 
 app = Flask(__name__)
 CORS(app) #enable Cross Origin Resource Sharing (CORS) for React frontend
+
+TRACK_MAPPING_PATH = "track_mapping.json"
+def load_track_mapping():
+    if os.path.exists(TRACK_MAPPING_PATH):
+        with open(TRACK_MAPPING_PATH, "r") as file:
+            return json.load(file)
+    return {}
+
+def save_track_mapping(mapping):
+    with open(TRACK_MAPPING_PATH, "w") as file:
+        json.dump(mapping, file, indent=2)
+
+track_mapping = load_track_mapping()
 
 @app.route('/api/data', methods = ['GET'])
 def get_data():
@@ -22,7 +42,8 @@ def get_data():
         top_genres_short = fetch_top_genres(top_artists_short)
         top_genres_medium = fetch_top_genres(top_artists_medium)
         top_genres_long = fetch_top_genres(top_artists_long)
-
+        add_recent_tracks(track_mapping)
+        save_track_mapping(track_mapping)
 
         response = {
             "user_info": data,

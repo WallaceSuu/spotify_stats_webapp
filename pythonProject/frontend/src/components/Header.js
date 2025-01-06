@@ -19,6 +19,9 @@ const Header = () => {
         <Link to="/RecentlyPlayed" className="nav-item">
           Recently Played
         </Link>
+        <Link to="/Tracking" className="nav-item">
+          Tracking
+        </Link>
         <Link to="/Share" className="nav-item">
           Share
         </Link>
