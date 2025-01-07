@@ -49,8 +49,8 @@ def fetch_top_genres(artists):
 def add_recent_tracks(track_mapping):
     recently_played = spotifyClient.current_user_recently_played(limit = 10)
     for item in recently_played['items']:
-        track_id = recently_played['track']['id']
-        track_name = recently_played['track']['name']
+        track_id = item['track']['id']
+        track_name = item['track']['name']
         played_at = item['played_at']
 
         #creating a unique listening id for each track
@@ -62,8 +62,6 @@ def add_recent_tracks(track_mapping):
                 "track_name": track_name,
                 "listened_at": played_at
             }
-
-    print(track_mapping)
 
 #main function
 if __name__ == "__main__":
