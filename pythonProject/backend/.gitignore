@@ -6,3 +6,11 @@ __pycache__/
 *.pyc
 *.pyo
 *.cache
+
+#VSCode settings
+.vscode/
+#PyCharm settings
+.idea/
+
+#ignore virtual environment
+venv/
