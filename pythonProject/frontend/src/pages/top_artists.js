@@ -21,11 +21,11 @@ const TopArtists = ({data}) => {
                 {items.length} Top Artists
             </div>
 
-            <div className="buttonContainer">
+    <div className="buttonContainer">
                 <button onClick={fourWeek}>Four Weeks</button>
                 <button onClick={fourMonth}>Four Months</button>
                 <button onClick={allTime}>All time</button>
-            </div>
+            </div>        
 
             <ul className = "topArtists">
                 {items.map((item, index) => (

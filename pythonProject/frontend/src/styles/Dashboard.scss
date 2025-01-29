@@ -1,8 +1,8 @@
-#profile_img{
-    margin-top: 2.5%;
-    width: 200px;
-    object-fit: cover; //this makes the image cropped instead of compressed when the width and height are set
-    height: 200px;
+#profile_img {
+    margin-top: 2%;
+    width: 250px;
+    object-fit: cover; // This makes the image cropped instead of compressed when the width and height are set
+    height: 250px;
     border-radius: 50%;
 }
 
@@ -10,9 +10,113 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+    
+}
+
+.leftcolumn {
+    float: left;
+    width: 49%;
+    /* Ensure the total width of the two columns is less than or equal to 100% */
+    padding-right: 1%;
+    /* Add spacing between columns */
+}
+
+.rightcolumn {
+    float: left;
+    /* Both columns need to float left to stay on the same line */
+    width: 49%;
+    /* Ensure the total width is balanced */
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* Clear floating elements to avoid layout breaking */
+}
+
+.button-container {
+    width: 100%;
+    /* Ensure the container takes full width */
+    text-align: center;
+    /* Horizontally center the buttons */
+}
+
+.button {
+    background-color: #04aa6d;
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    display: block;
+    margin-bottom: 15px; //space between buttons
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    width: 55%;
+    border-radius: 12px;
+}
+
+.button:hover {
+    opacity: 0.6
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #9c9c9c;
+    margin-top: 20px;
+}
+
 .dashboard {
-    padding-top: 10%;
-    color: #ffffff;
+    padding-top: 4%;
+    color: #000000;
     background-color: #ffffff;
     height: 100vh;
+}
+
+.new_releases{
+    list-style: none;
+        text-align: left;
+        width: 60%;
+        /* Adjust as needed */
+        margin: 0 auto;
+        /* Center the grid */
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 15px;/* Space between grid items */
+
+       li {
+             display: flex;
+             align-items: center;
+             /* Vertically centers the elements */
+             margin-top: 1%;
+             width: 100%;
+            /* Take full width */
+            gap: 15px;
+            /* Space between items within the list item */
+            }
+        
+            img {
+                margin-top: 10px;
+                padding-right: 10px;
+            }
+        
+            .track_name {
+                flex-grow: 1;
+            }
+
+
+        
 }

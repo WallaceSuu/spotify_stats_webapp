@@ -67,4 +67,4 @@ def add_recent_tracks(track_mapping):
 if __name__ == "__main__":
     PROFILE = fetch_user_info()
     print(PROFILE)
-    add_recent_track()
+    add_recent_tracks()
