@@ -1,3 +1,4 @@
+import time
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI
@@ -17,27 +18,36 @@ sp_oauth = SpotifyOAuth(
     show_dialog=True
 )
 
+def measure_fetch_time(func, *args, **kwargs):
+    """
+    Measures the execution time of an API call.
+    """
+    start_time = time.time()
+    result = func(*args, **kwargs)
+    elapsed_time = time.time() - start_time
+    print(func.__name__, "took", round(elapsed_time, 2), "seconds")
+    return result
+
+auth_url = sp_oauth.get_authorize_url()
+
+# Redirect or display auth_url to the user to grant access
+print(f"Please visit this URL to authorize: {auth_url}")
+
 #creating a spotify client
 spotifyClient = Spotify(auth_manager = sp_oauth)
 
 track_mapping = {}
-
 def fetch_user_info():
-    user_info = spotifyClient.me()
-    return user_info
+    return measure_fetch_time(spotifyClient.me)
 
 def fetch_recently_played(limit):
-    recently_played = spotifyClient.current_user_recently_played(limit = limit)
-    return recently_played
+    return measure_fetch_time(spotifyClient.current_user_recently_played, limit=limit)
 
 def fetch_top_artists(time_range):
-    results = spotifyClient.current_user_top_artists(time_range=time_range)
-    return results
+    return measure_fetch_time(spotifyClient.current_user_top_artists, time_range=time_range)
 
 def fetch_top_tracks(time_range):
-    results = spotifyClient.current_user_top_tracks(time_range=time_range)
-    return results
-
+    return measure_fetch_time(spotifyClient.current_user_top_tracks, time_range=time_range)
 def fetch_top_genres(artists):
     genres = []
     for artist in artists['items']:
@@ -65,6 +75,7 @@ def add_recent_tracks(track_mapping):
 
 #main function
 if __name__ == "__main__":
-    PROFILE = fetch_user_info()
-    print(PROFILE)
-    add_recent_tracks()
+    fetch_user_info()
+    fetch_recently_played(50)
+    fetch_top_artists("long_term")
+    fetch_top_tracks("long_term")
